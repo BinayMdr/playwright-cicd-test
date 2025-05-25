@@ -25,13 +25,31 @@ pipeline {
                 sh 'npm run test:bdd'
             }
         }
+
+        stage('Generate Allure Report') {
+            steps {
+                // Make sure allure CLI is installed or download it temporarily
+                sh '''
+                if ! command -v allure &> /dev/null; then
+                  wget https://github.com/allure-framework/allure2/releases/download/2.21.0/allure-2.21.0.tgz
+                  tar -zxvf allure-2.21.0.tgz
+                  export PATH=$PATH:$PWD/allure-2.21.0/bin
+                fi
+
+                ./allure-2.21.0/bin/allure generate allure-results --clean -o allure-report
+                '''
+            }
+        }
     }
 
     post {
         always {
-             allure([
-            reportBuildPolicy: 'ALWAYS',
-            results: [[path: 'allure-results']]  // Adjust the path where Allure results are saved
+            archiveArtifacts artifacts: 'allure-report/**', fingerprint: true
+            
+            publishHTML(target: [
+                reportDir: 'allure-report',
+                reportFiles: 'index.html',
+                reportName: 'Allure Report'
             ])
         }
     }
