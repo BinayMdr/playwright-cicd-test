@@ -29,8 +29,10 @@ pipeline {
 
     post {
         always {
-            junit 'playwright-report/*.xml'   // Adjust if you generate JUnit reports
-            archiveArtifacts artifacts: 'playwright-report/**', fingerprint: true
+             allure([
+            reportBuildPolicy: 'ALWAYS',
+            results: [[path: 'allure-results']]  // Adjust the path where Allure results are saved
+            ])
         }
     }
 }
