@@ -41,16 +41,4 @@ pipeline {
             }
         }
     }
-
-    post {
-        always {
-            archiveArtifacts artifacts: 'allure-report/**', fingerprint: true
-            
-            publishHTML(target: [
-                reportDir: 'allure-report',
-                reportFiles: 'index.html',
-                reportName: 'Allure Report'
-            ])
-        }
-    }
 }
