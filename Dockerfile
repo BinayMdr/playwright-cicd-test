@@ -19,4 +19,4 @@ RUN npm install \
 EXPOSE 8080
 
 # Define the command to run the app
-CMD ["npx", "playwright", "test"]
+CMD ["npm", "run", "test:bdd"]
