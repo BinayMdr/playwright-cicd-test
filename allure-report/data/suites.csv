@@ -1,0 +1,7 @@
+"DESCRIPTION","DURATION IN MS","NAME","PARENT SUITE","START TIME","STATUS","STOP TIME","SUB SUITE","SUITE","TEST CLASS","TEST METHOD"
+"","5166","Descending order","chromium","Sat May 24 18:25:29 NPT 2025","passed","Sat May 24 18:25:34 NPT 2025","","example.spec.js","",""
+"","2935","Place order","chromium","Sat May 24 18:25:35 NPT 2025","passed","Sat May 24 18:25:37 NPT 2025","","example.spec.js","",""
+"","7706","Descending order","firefox","Sat May 24 18:25:38 NPT 2025","passed","Sat May 24 18:25:46 NPT 2025","","example.spec.js","",""
+"","5229","Place order","firefox","Sat May 24 18:25:45 NPT 2025","passed","Sat May 24 18:25:50 NPT 2025","","example.spec.js","",""
+"","5211","Ascending order","chromium","Sat May 24 18:25:29 NPT 2025","passed","Sat May 24 18:25:34 NPT 2025","","example.spec.js","",""
+"","7314","Ascending order","firefox","Sat May 24 18:25:35 NPT 2025","passed","Sat May 24 18:25:43 NPT 2025","","example.spec.js","",""
